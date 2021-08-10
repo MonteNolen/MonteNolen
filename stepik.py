@@ -1,16 +1,18 @@
-from quick_merge import quick_merge
+def write_txt():
+    with open('text.txt', 'a+') as f:
+        f_name = input()
+        l_name = input()
+        s = f_name.title() + ' ' + l_name.title() + '\n'
+        f.write(s)
 
-"""[summary]
-temp = []
-for i in range(int(input())):
-    temp.append([int(i) for i in input().split()])
-"""
+def read_txt():
+    f = open('text.txt', 'r')
+    line = f.readline()
+    i = 1
+    while line:
+        print("Строка:", i, '\t' + 'Имя и Фамилия:' + '\t' + line)
+        i += 1
+        line = f.readline()  
 
-n = int(input())
-st = [] #пустой
-temp = [] #заполненный
-for i in range(n):
-    temp.append([int(i) for i in input().split()])
-    st = quick_merge(st, temp[i])
-    st.sort()
-print(*st)
+#write_txt()
+read_txt()
